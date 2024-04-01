@@ -21,15 +21,15 @@ export default function StandardImageList() {
 
 const itemData = [
     {
-        img: './src/assets/backend/Amplify.png',
+        img: '/assets/backend/Amplify.png',
         title: 'Amplify',
     },
     {
-        img: './src/assets/backend/Lambda.png',
+        img: '/assets/backend/Lambda.png',
         title: 'HTML',
     },
     {
-        img: './src/assets/backend/Node.png',
+        img: '/assets/backend/Node.png',
         title: 'JS',
     },
 ];

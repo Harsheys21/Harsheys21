@@ -21,19 +21,19 @@ export default function StandardImageList() {
 
 const itemData = [
     {
-        img: './src/assets/database/DynamoDB.png',
+        img: '/assets/database/DynamoDB.png',
         title: 'Amplify',
     },
     {
-        img: './src/assets/database/Firebase.png',
+        img: '/assets/database/Firebase.png',
         title: 'HTML',
     },
     {
-        img: './src/assets/database/Neo4j.png',
+        img: '/assets/database/Neo4j.png',
         title: 'JS',
     },
     {
-        img: './src/assets/database/PostgreSQL.png',
+        img: '/assets/database/PostgreSQL.png',
         title: 'React',
     }
 ];

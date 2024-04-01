@@ -3,6 +3,8 @@ import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 
 export default function StandardImageList() {
+    console.log("itemData:", itemData);
+
     return (
         <ImageList cols={4} rowWidth={0}>
             {itemData.map((item) => (
@@ -21,19 +23,19 @@ export default function StandardImageList() {
 
 const itemData = [
     {
-        img: '../src/assets/frontend/amplify.png',
+        img: '/assets/frontend/amplify.png',
         title: 'Amplify',
     },
     {
-        img: 'src\assets\frontend\html.png',
+        img: '/assets/frontend/html.png',
         title: 'HTML',
     },
     {
-        img: './src/assets/frontend/js.png',
+        img: '/assets/frontend/js.png',
         title: 'JS',
     },
     {
-        img: './src/assets/frontend/react.png',
+        img: '/assets/frontend/react.png',
         title: 'React',
     }
 ];

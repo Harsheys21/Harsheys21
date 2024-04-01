@@ -21,23 +21,23 @@ export default function StandardImageList() {
 
 const itemData = [
     {
-        img: './src/assets/ai/Keras.png',
+        img: '/assets/ai/Keras.png',
         title: 'Amplify',
     },
     {
-        img: './src/assets/ai/NumPy.png',
+        img: '/assets/ai/NumPy.png',
         title: 'HTML',
     },
     {
-        img: './src/assets/ai/Pytorch.png',
+        img: '/assets/ai/Pytorch.png',
         title: 'JS',
     },
     {
-        img: './src/assets/ai/Scikit-learn.png',
+        img: '/assets/ai/Scikit-learn.png',
         title: 'React',
     },
     {
-        img: './src/assets/ai/TensorFlow.png',
+        img: '/assets/ai/TensorFlow.png',
         title: 'React',
     }
 ];
