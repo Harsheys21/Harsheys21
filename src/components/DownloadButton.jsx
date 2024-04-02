@@ -4,7 +4,7 @@ import DownloadIcon from '@mui/icons-material/Download';
 
 const DownloadButton = () => {
     const handleDownload = () => {
-        const resumeUrl = '/src/assets/resume.pdf';
+        const resumeUrl = '/assets/resume.pdf';
         console.log("Resume URL:", resumeUrl); // Log the resume URL
         const link = document.createElement('a');
         link.href = resumeUrl;

@@ -3,12 +3,12 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import {Typography} from '@mui/material';
+import {Typography, Button} from '@mui/material';
 import DownloadButton from "./DownloadButton"
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
-const Home = () => {
+const Home = ({ aboutRef }) => {
     return (
         <>
             <Box sx={{
@@ -33,7 +33,9 @@ const Home = () => {
                 </Box>
             </Box>
             <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: "center"}} >
-                <ExpandMoreIcon sx={{ fontSize: 100 }} />
+                <Button variant="h6" onClick={() => aboutRef.current.scrollIntoView({ behavior: 'smooth' })}>
+                    <ExpandMoreIcon sx={{ fontSize: 100 }} />
+                </Button>
             </Box>
         </>
     );

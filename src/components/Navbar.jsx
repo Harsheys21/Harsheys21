@@ -2,19 +2,15 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
-import Box from '@mui/material/Box';
-import { Button } from '@mui/material';
+import Button from '@mui/material/Button';
 import Fab from '@mui/material/Fab';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
 
 function ScrollTop(props) {
     const { children, window } = props;
-    // Note that you normally won't need to set the window ref as useScrollTrigger
-    // will default to window.
-    // This is only being set here because the demo is in an iframe.
     const trigger = useScrollTrigger({
         target: window ? window() : undefined,
         disableHysteresis: true,
@@ -28,8 +24,8 @@ function ScrollTop(props) {
 
         if (anchor) {
             anchor.scrollIntoView({
-                behavior: 'smooth', // Smooth scrolling behavior
-                block: 'start', // Scroll to the top of the viewport
+                behavior: 'smooth',
+                block: 'start',
             });
         }
     };
@@ -47,25 +43,24 @@ function ScrollTop(props) {
     );
 }
 
-
 export default function BackToTop(props) {
     return (
         <>
             <AppBar >
-                <Toolbar sx={{display:"flex", justifyContent: "space-around"}}>
-                    <Button variant="h6">
+                <Toolbar sx={{ display: "flex", justifyContent: "space-around" }}>
+                    <Button variant="h6" onClick={() => props.homeRef.current.scrollIntoView({ behavior: 'smooth' })}>
                         HOME
                     </Button>
-                    <Button variant="h6">
+                    <Button variant="h6" onClick={() => props.aboutRef.current.scrollIntoView({ behavior: 'smooth' })}>
                         ABOUT
                     </Button>
-                    <Button variant="h6">
+                    <Button variant="h6" onClick={() => props.experienceRef.current.scrollIntoView({ behavior: 'smooth' })}>
                         EXPERIENCE
                     </Button>
-                    <Button variant="h6">
+                    <Button variant="h6" onClick={() => props.skillsRef.current.scrollIntoView({ behavior: 'smooth' })}>
                         SKILLS
                     </Button>
-                    <Button variant="h6">
+                    <Button variant="h6" onClick={() => props.projectsRef.current.scrollIntoView({ behavior: 'smooth' })}>
                         PROJECTS
                     </Button>
                 </Toolbar>
