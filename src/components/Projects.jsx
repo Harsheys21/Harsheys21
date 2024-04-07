@@ -4,11 +4,43 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import React from 'react';
-import Frontend from "./Frontend"
-import Backend from "./Backend"
-import UI from "./UI"
-import Machine from "./Machine"
-import Database from "./Database"
+import AI from "./Projects/AI"
+import Data from "./Projects/data"
+import ML from "./Projects/ML"
+import Systems from "./Projects/systems"
+import Webdev from "./Projects/webdev"
+
+// Projects
+
+// 1. ** Artificial Intelligence **:
+// - Evolving - Mario - Levels: question mark
+// - HTN - Planning -for-Minecraft: checklist
+// - Navmesh - Pathfinding: map
+// - Planet - Wars -with-Behavior - Trees: rocket
+// - Monte - Carlo - Tree - Search -for-Ultimate - Tic - TacToe: close
+
+// 2. ** Machine Learning **:
+// - Facial Gaming: brain
+//     - Transfer - Learning - Challenge: landscape
+
+// 3. ** Web Development **:
+// - Study - Link: school
+//     - Petals - Website: celebration
+//         - ShoppingCart: addshopping
+//             - Soteria: directionsrun
+//                 - Dojo - Blog: book
+//                     - Job - Search: work
+
+// 4. ** Systems Programming **:
+// - Multi - Threaded - HTTP - Server: http
+//     - HTTP - Server: https
+
+// 5. ** Data Science and Analysis **:
+// - HO1: BarCHart
+//     - HO3: CleaningServices
+//         - HO4: homerepair
+//             - HO5: Science
+
 
 const Skills = () => {
 
@@ -20,7 +52,7 @@ const Skills = () => {
 
     return (
         <>
-            <Box sx={{ margin: "10%", marginBottom: 0, display: 'flex', flexDirection: 'row', width: "80%", height: "60vh" }}>
+            <Box sx={{ paddingTop: "25%", margin: "auto", boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', display: 'flex', flexDirection: 'row', width: "80%", height: "100vh" }}>
                 <Box sx={{ display: "flex", flex: 2, flexDirection: "column", alignItems: "center", width: "50%" }}>
                     <Typography variant="h4" fontWeight="bold">Projects</Typography>
 
@@ -36,19 +68,19 @@ const Skills = () => {
                                 </TabList>
                             </Box>
                             <TabPanel value="1">
-                                <Frontend></Frontend>
+                                <AI></AI>
                             </TabPanel>
                             <TabPanel value="2">
-                                <Backend></Backend>
+                                <ML></ML>
                             </TabPanel>
                             <TabPanel value="3">
-                                <UI></UI>
+                                <Webdev></Webdev>
                             </TabPanel>
                             <TabPanel value="4">
-                                <Machine></Machine>
+                                <Systems></Systems>
                             </TabPanel>
                             <TabPanel value="5">
-                                <Database></Database>
+                                <Data></Data>
                             </TabPanel>
                         </TabContext>
                     </Box>

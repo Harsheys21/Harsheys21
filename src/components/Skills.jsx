@@ -4,11 +4,11 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import React from 'react';
-import Frontend from "./Frontend"
-import Backend from "./Backend"
-import UI from "./UI"
-import Machine from "./Machine"
-import Database from "./Database"
+import Frontend from "./Skills/Frontend"
+import Backend from "./Skills/Backend"
+import UI from "./Skills/UI"
+import Machine from "./Skills/Machine"
+import Database from "./Skills/Database"
 
 const Skills = () => {
 
@@ -20,7 +20,7 @@ const Skills = () => {
 
     return (
         <>
-            <Box sx={{ boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', margin: "5%", padding: "5%", marginBottom: 0, display: 'flex', flexDirection: 'row', width: "80%", height: "60vh" }}>
+            <Box sx={{ paddingBottom: "10%", paddingTop: "10%", margin: "auto", boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', display: 'flex', flexDirection: 'row', width: "80%" }}>
                 <Box sx={{ display: "flex", flex: 2, flexDirection: "column", alignItems: "center", width: "50%"}}>
                     <Typography variant="h4" fontWeight="bold">My Skills</Typography>
                     <Typography variant="subtitle1" fontWeight="bold" align="center">

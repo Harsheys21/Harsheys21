@@ -12,7 +12,7 @@ const Home = ({ aboutRef }) => {
     return (
         <>
             <Box sx={{
-                padding: "5%", margin: "5%", marginBottom: 0, display: 'flex', flexDirection: 'row', width: "80%", height: "60vh", boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)'}}>
+                paddingTop: "10%", margin: "auto", display: 'flex', flexDirection: 'row', width: "80%", height: "60vh", boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)'}}>
                 <Box sx={{display: "flex", justifyContent: "center", width: "50%", alignItems: "center" }}>
                     <Typography variant="h1" textAlign="center" fontWeight="medium">
                         Harsh <br /> Jha

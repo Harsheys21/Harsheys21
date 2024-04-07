@@ -6,7 +6,9 @@ import About from "./components/About";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
+import Contact from "./components/Contact"
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
 const theme = createTheme({
   typography: {
@@ -19,6 +21,7 @@ const theme = createTheme({
     }
   },
   palette: {
+    mode: "dark",
     primary: {
       main: '#FFB347',
     },
@@ -34,22 +37,26 @@ function App() {
   const experienceRef = useRef(null);
   const projectsRef = useRef(null);
   const skillsRef = useRef(null);
+  const contactRef = useRef(null);
 
   return (
     <>
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <NavBar
           homeRef={homeRef}
           aboutRef={aboutRef}
           experienceRef={experienceRef}
           projectsRef={projectsRef}
           skillsRef={skillsRef}
+          contactRef={contactRef}
         />
         <div ref={homeRef}><Home aboutRef={aboutRef} /></div>
-        <div ref={aboutRef}><About /></div>
+        <div ref={aboutRef}><About contactRef={contactRef} /></div>
         <div ref={experienceRef}><Experience /></div>
         <div ref={skillsRef}><Skills /></div>
-        <div ref={projectsRef}><Projects /></div>
+        {/* <div ref={projectsRef}><Projects /></div> */}
+        <div ref={contactRef}><Contact/></div>
       </ThemeProvider>
     </>
   );

@@ -60,8 +60,11 @@ export default function BackToTop(props) {
                     <Button variant="h6" onClick={() => props.skillsRef.current.scrollIntoView({ behavior: 'smooth' })}>
                         SKILLS
                     </Button>
-                    <Button variant="h6" onClick={() => props.projectsRef.current.scrollIntoView({ behavior: 'smooth' })}>
+                    {/* <Button variant="h6" onClick={() => props.projectsRef.current.scrollIntoView({ behavior: 'smooth' })}>
                         PROJECTS
+                    </Button> */}
+                    <Button variant="h6" onClick={() => props.contactRef.current.scrollIntoView({ behavior: 'smooth' })}>
+                        CONTACT
                     </Button>
                 </Toolbar>
             </AppBar>
