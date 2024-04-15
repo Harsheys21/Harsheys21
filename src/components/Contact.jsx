@@ -41,7 +41,7 @@ const Contact = () => {
             try {
                 // Replace with your EmailJS service ID and template ID
                 const serviceId = 'service_ihvb6zc';
-                const templateId = 'template_eyrdn7i';
+                const templateId = 'template_axaf6i1';
 
                 // Prepare the email data
                 const emailData = {
@@ -53,7 +53,7 @@ const Contact = () => {
                 };
 
                 // Send the email using EmailJS
-                const response = await emailjs.send(serviceId, templateId, emailData, "DHbT5VKXwklqzIxxH");
+                const response = await emailjs.send(serviceId, templateId, emailData, "UdAZQxuR2gwSbjqTx");
 
                 if (response.status === 200) {
                     alert('Email sent successfully!');
