@@ -67,6 +67,7 @@ function App() {
                 <div ref={contactRef}><Contact /></div>
               </>
             } />
+            <Route path="/test" element={<About />} />
             <Route path="/admin/*" element={<Admin />}/>
             <Route path="/project/:slug" element={
               <>
