@@ -10,8 +10,8 @@ const Experience = () => {
     return (
         <Box
             sx={{
-                paddingBottom: "10%",
-                paddingBottom: isMobile ? "50%" : isTablet ? "20%": "10%",
+                paddingBottom: "10vh",
+                paddingTop: isMobile ? "5%" : isTablet ? "100vh": "10vh",
                 margin: "auto",
                 boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)',
                 display: 'flex',
