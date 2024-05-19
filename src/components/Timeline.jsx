@@ -11,7 +11,6 @@ import { getExperience } from "../../sanity/sanity.utils";
 import { useState, useEffect } from 'react';
 
 export default function BasicTimeline() {
-
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -59,7 +58,7 @@ export default function BasicTimeline() {
                                 </Typography>
                                 <ul>
                                     {experience.description.map((point, idx) => (
-                                        <li>
+                                        <li key={idx}>
                                             <Typography variant='caption' fontWeight="bold">
                                                 {point}
                                             </Typography>
@@ -70,8 +69,7 @@ export default function BasicTimeline() {
                         </TimelineItem>
                     </Timeline>
                 </div>
-            ))
-            }
+            ))}
         </>
     );
 }

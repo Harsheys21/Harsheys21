@@ -28,7 +28,7 @@ const About = ({ contactRef }) => {
     }, []);
 
     return (
-        <Box sx={{ paddingTop: "10%", margin: "auto", boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', width: "80%", paddingBottom: isSmallScreen ? "20vh" : "0vh" }}>
+        <Box sx={{ paddingTop: "10%", margin: "auto", boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)', width: "80%", paddingBottom: isSmallScreen ? "50vh" : "0vh" }}>
             <Box sx={{ display: 'flex', flexDirection: isSmallScreen ? 'column' : 'row', height: "75vh" }}>
                 <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center", width: isSmallScreen ? "100%" : "50%" }}>
                     <Typography fontWeight="bold" variant="h4" mb={2}> Education </Typography>
