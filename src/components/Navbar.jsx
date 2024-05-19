@@ -8,6 +8,15 @@ import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Divider from '@mui/material/Divider';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 function ScrollTop(props) {
     const { children, window } = props;
@@ -43,29 +52,75 @@ function ScrollTop(props) {
     );
 }
 
+ScrollTop.propTypes = {
+    children: PropTypes.element.isRequired,
+    window: PropTypes.func,
+};
+
 export default function BackToTop(props) {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const [drawerOpen, setDrawerOpen] = React.useState(false);
+
+    const handleDrawerToggle = () => {
+        setDrawerOpen(!drawerOpen);
+    };
+
+    const renderButtons = () => (
+        <>
+            <ListItem button onClick={() => props.homeRef.current.scrollIntoView({ behavior: 'smooth' })}>
+                <ListItemText primary="HOME" />
+            </ListItem>
+            <ListItem button onClick={() => props.aboutRef.current.scrollIntoView({ behavior: 'smooth' })}>
+                <ListItemText primary="ABOUT" />
+            </ListItem>
+            <ListItem button onClick={() => props.experienceRef.current.scrollIntoView({ behavior: 'smooth' })}>
+                <ListItemText primary="EXPERIENCE" />
+            </ListItem>
+            <ListItem button onClick={() => props.skillsRef.current.scrollIntoView({ behavior: 'smooth' })}>
+                <ListItemText primary="SKILLS" />
+            </ListItem>
+            <ListItem button onClick={() => props.projectsRef.current.scrollIntoView({ behavior: 'smooth' })}>
+                <ListItemText primary="PROJECTS" />
+            </ListItem>
+            <ListItem button onClick={() => props.contactRef.current.scrollIntoView({ behavior: 'smooth' })}>
+                <ListItemText primary="CONTACT" />
+            </ListItem>
+        </>
+    );
+
     return (
         <>
-            <AppBar >
-                <Toolbar sx={{ display: "flex", justifyContent: "space-around" }}>
-                    <Button variant="h6" onClick={() => props.homeRef.current.scrollIntoView({ behavior: 'smooth' })}>
-                        HOME
-                    </Button>
-                    <Button variant="h6" onClick={() => props.aboutRef.current.scrollIntoView({ behavior: 'smooth' })}>
-                        ABOUT
-                    </Button>
-                    <Button variant="h6" onClick={() => props.experienceRef.current.scrollIntoView({ behavior: 'smooth' })}>
-                        EXPERIENCE
-                    </Button>
-                    <Button variant="h6" onClick={() => props.skillsRef.current.scrollIntoView({ behavior: 'smooth' })}>
-                        SKILLS
-                    </Button>
-                    {/* <Button variant="h6" onClick={() => props.projectsRef.current.scrollIntoView({ behavior: 'smooth' })}>
-                        PROJECTS
-                    </Button> */}
-                    <Button variant="h6" onClick={() => props.contactRef.current.scrollIntoView({ behavior: 'smooth' })}>
-                        CONTACT
-                    </Button>
+            <AppBar>
+                <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                    {isMobile ? (
+                        <>
+                            <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleDrawerToggle}>
+                                <MenuIcon />
+                            </IconButton>
+                            <Drawer
+                                anchor="left"
+                                open={drawerOpen}
+                                onClose={handleDrawerToggle}
+                            >
+                                <Box
+                                    sx={{ width: 250 }}
+                                    role="presentation"
+                                    onClick={handleDrawerToggle}
+                                    onKeyDown={handleDrawerToggle}
+                                >
+                                    <List>
+                                        {renderButtons()}
+                                    </List>
+                                    <Divider />
+                                </Box>
+                            </Drawer>
+                        </>
+                    ) : (
+                        <Box sx={{ display: 'flex', justifyContent: 'space-around', width: '100%' }}>
+                            {renderButtons()}
+                        </Box>
+                    )}
                 </Toolbar>
             </AppBar>
             <Toolbar id="back-to-top-anchor" />
@@ -77,3 +132,13 @@ export default function BackToTop(props) {
         </>
     );
 }
+
+BackToTop.propTypes = {
+    homeRef: PropTypes.object.isRequired,
+    aboutRef: PropTypes.object.isRequired,
+    experienceRef: PropTypes.object.isRequired,
+    skillsRef: PropTypes.object.isRequired,
+    projectsRef: PropTypes.object.isRequired,
+    contactRef: PropTypes.object.isRequired,
+    window: PropTypes.func,
+};

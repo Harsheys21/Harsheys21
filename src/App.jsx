@@ -7,8 +7,12 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contact from "./components/Contact"
+import Admin from "./components/Admin"
+import ProjectDetails from './components/ProjectDetails';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Navbar2 from './components/NavBar2';
 
 const theme = createTheme({
   typography: {
@@ -43,20 +47,35 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <NavBar
-          homeRef={homeRef}
-          aboutRef={aboutRef}
-          experienceRef={experienceRef}
-          projectsRef={projectsRef}
-          skillsRef={skillsRef}
-          contactRef={contactRef}
-        />
-        <div ref={homeRef}><Home aboutRef={aboutRef} /></div>
-        <div ref={aboutRef}><About contactRef={contactRef} /></div>
-        <div ref={experienceRef}><Experience /></div>
-        <div ref={skillsRef}><Skills /></div>
-        {/* <div ref={projectsRef}><Projects /></div> */}
-        <div ref={contactRef}><Contact/></div>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={
+              <>
+                <NavBar
+                  homeRef={homeRef}
+                  aboutRef={aboutRef}
+                  experienceRef={experienceRef}
+                  projectsRef={projectsRef}
+                  skillsRef={skillsRef}
+                  contactRef={contactRef}
+                />
+                <div ref={homeRef}><Home aboutRef={aboutRef} /></div>
+                <div ref={aboutRef}><About contactRef={contactRef} /></div>
+                <div ref={experienceRef}><Experience /></div>
+                <div ref={skillsRef}><Skills /></div>
+                <div ref={projectsRef}><Projects/></div>
+                <div ref={contactRef}><Contact /></div>
+              </>
+            } />
+            <Route path="/admin/*" element={<Admin />}/>
+            <Route path="/project/:slug" element={
+              <>
+                <Navbar2/>
+                <ProjectDetails />
+              </>
+            } />
+          </Routes>
+        </BrowserRouter>
       </ThemeProvider>
     </>
   );
